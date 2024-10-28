@@ -8,13 +8,37 @@ body {
 }
 
 .main-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 40px auto;
     background-color: #fff;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
+}
+
+/* Grid System */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    grid-column: span 12;
+}
+
+@media (min-width: 768px) {
+    .summary, .education {
+        grid-column: span 8;
+    }
+
+    .experience, .projects {
+        grid-column: span 6;
+    }
+
+    .skills {
+        grid-column: span 4;
+    }
 }
 
 /* Header Styles */
@@ -24,72 +48,12 @@ header {
     padding: 30px 0;
     text-align: center;
     border-radius: 15px 15px 0 0;
-    position: relative;
 }
 
 h1 {
     font-size: 38px;
     margin: 0;
     animation: slideIn 1.5s ease-in-out;
-}
-
-.subtitle {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-.contact-info {
-    margin-top: 10px;
-}
-
-.contact-info a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-info a:hover {
-    color: #2a2a2a;
-}
-
-/* Section Styles */
-.content {
-    padding: 20px;
-}
-
-.section-title {
-    font-size: 28px;
-    color: #121212;
-    border-bottom: 2px solid #1d1d1d;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease;
-}
-
-h3 {
-    font-size: 22px;
-    color: #000000;
-    margin: 15px 0;
-}
-
-/* Skills Section */
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.skills-list span {
-    background-color: #ffbf00;
-    color: #121212;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: transform 0.3s;
-}
-
-.skills-list span:hover {
-    transform: scale(1.1);
 }
 
 /* Footer */
@@ -101,40 +65,3 @@ footer {
     border-radius: 0 0 15px 15px;
 }
 
-footer a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
-}
-
-footer a:hover {
-    color: #ff0000;
-}
-
-/* Animations */
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateY(-50px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.animate-slide {
-    animation: slideIn 1s ease-in-out;
-}
-
-.animate-fade {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.animate-title {
-    animation: slideIn 1.5s ease-in-out;
-}
-
-.animate-hover:hover {
-    transform: scale(1.1);
-}
